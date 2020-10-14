@@ -7,6 +7,7 @@ import AppButton from '../components/AppButton';
 import AppTextInput from '../components/AppTextInput';
 import ErrorMessage from '../components/ErrorMessage';
 import Screen from '../components/Screen';
+import AppFormField from '../components/AppFormField';
 
 
 // validation schema for form
@@ -30,30 +31,25 @@ function LoginScreen(props) {
             >
                 {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
                     <>
-                        <AppTextInput
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             keyboardType="email-address"
-                            onBlur={() => setFieldTouched("email")}
                             icon="email"
+                            name="email"
                             placeholder="Email"
                             textContentType="emailAddress"
-                            onChangeText={handleChange("email")}
                         />
-                        <ErrorMessage visible={touched.email} error={errors.email} />
 
-                        <AppTextInput
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
-                            onBlur={() => setFieldTouched("password")}
+                            name="password"
                             placeholder="Password"
                             secureTextEntry
                             textContentType="password"
-                            onChangeText={handleChange("password")}
                         />
-                        <ErrorMessage visible={touched.password} error={errors.password} />
-
                         <AppButton title="Login" onPress={handleSubmit} />
                     </>
                 )}
