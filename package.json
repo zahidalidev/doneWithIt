@@ -13,15 +13,13 @@
     "expo-constants": "^9.0.0",
     "expo-image-picker": "~8.3.0",
     "expo-status-bar": "^1.0.2",
+    "formik": "^2.1.4",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
-    "react-native-image-crop-picker": "^0.32.2",
-    "react-native-progress": "^4.0.3",
-    "react-native-tesseract-ocr": "^2.0.1",
     "react-native-web": "~0.11.7",
-    "tesseract.js": "^2.0.0-beta.1"
+    "yup": "^0.28.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
