@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Alert, FlatList, StyleSheet, View } from 'react-native';
 
-import ListItem from '../components/ListItem';
-import ListItemDeleteAction from '../components/ListItemDeleteAction';
-import ListItemSeperator from '../components/ListItemSeperator';
+import ListItem from '../components/lists/ListItem';
+import ListItemDeleteAction from '../components/lists/ListItemDeleteAction';
+import ListItemSeperator from '../components/lists/ListItemSeperator';
 import Screen from '../components/Screen';
 
 const initialMessages = [
@@ -32,25 +32,25 @@ function MessagesScreen(props) {
 
     return (
         <Screen>
-            <FlatList 
+            <FlatList
                 data={messages} //providing data to flat list that will be array of objects and list will show all of them
                 keyExtractor={message => message.id.toString()}
-                renderItem={({item}) => 
+                renderItem={({ item }) =>
                     //custom list rendering in flatList
-                    <ListItem 
+                    <ListItem
                         title={item.title}
                         subTitle={item.description}
                         image={item.image}
                         onPress={() => console.log("message selected ", item)}
                         renderRightActions={() => (
-                            <ListItemDeleteAction onPress = {() => handleDelete(item.id)} />
+                            <ListItemDeleteAction onPress={() => handleDelete(item.id)} />
                         )}
                     />
                 }
-                ItemSeparatorComponent = {ListItemSeperator}
+                ItemSeparatorComponent={ListItemSeperator}
                 //to referesh list first set the value of refereshing to false using variable
-                refreshing = {refreshing}
-                onRefresh = {() => {
+                refreshing={refreshing}
+                onRefresh={() => {
                     //sow this messages after refreshing
                     setMessages(
                         [
@@ -69,7 +69,7 @@ function MessagesScreen(props) {
 }
 
 const styles = StyleSheet.create({
-   
+
 })
 
 export default MessagesScreen;

@@ -3,26 +3,26 @@ import { Image, View, StyleSheet } from 'react-native';
 
 import AppText from '../components/AppText';
 import colors from "../config/colors";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
 
 export default function ListiningDetailsScreen(props) {
-  return (
-    <View>
-        <Image style={styles.image} source={require("../assets/jacket.jpg")} />
-        <View style={styles.detailsContainer}>
-            <AppText style={styles.title}>Red Jacket For Sale</AppText>
-            <AppText style={styles.price} >$100</AppText>
-            <View style={styles.userContainer}>
-                <ListItem 
-                    image={require("../assets/mosh.jpg")}
-                    title="Mosh Hamedani"
-                    subTitle="5 Listinings"
-                />
+    return (
+        <View>
+            <Image style={styles.image} source={require("../assets/jacket.jpg")} />
+            <View style={styles.detailsContainer}>
+                <AppText style={styles.title}>Red Jacket For Sale</AppText>
+                <AppText style={styles.price} >$100</AppText>
+                <View style={styles.userContainer}>
+                    <ListItem
+                        image={require("../assets/mosh.jpg")}
+                        title="Mosh Hamedani"
+                        subTitle="5 Listinings"
+                    />
+                </View>
+
             </View>
-             
         </View>
-    </View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
